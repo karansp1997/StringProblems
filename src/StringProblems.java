@@ -64,4 +64,37 @@ public class StringProblems {
         }
         System.out.println(breakGivenString);
     }
+
+    /*Anagrams are a pair of Strings that have an exact length, exact matching characters irrespective of the Case, space, punctuations
+    * Example: Mary-Army, night-Thing, peach-cheap */
+
+    public void validateTwoStringsToBeAnagrams(String firstString, String secondString) {
+        char[] brokenFirstString = firstString.toLowerCase().toCharArray();
+        char[] brokenSecondString = secondString.toLowerCase().toCharArray();
+
+        int counter=0;
+        int anagramCounter=0;
+        if(firstString.length() == secondString.length()) {
+            for(int i = 0; i<=firstString.length()-1; i++) {
+                for(int j=i+1; j<=firstString.length()-1; j++) {
+                    if(brokenFirstString[i] == brokenSecondString[j]){
+                      counter++;
+                    }
+                }
+                if(counter==1){
+                    anagramCounter++;
+                }
+            }
+        }
+        else{
+            System.out.println("The given pair of Strings cannot be anagrams as they have unequal lengths");
+            System.exit(0);
+        }
+        if(anagramCounter==firstString.length()){
+            System.out.println("The given set of Strings are anagrams of each other");
+        }
+        else {
+            System.out.println("The given set of Strings are not the anagrams of each other");
+        }
+    }
 }

@@ -7,6 +7,7 @@ public class StringApplication {
         app.removeDuplicateCharacters("abbas");
         app.sortString("karan");
         app.replaceOccurrenceOfCharacterWithNumber("Karan", 'a');
+        app.validateTwoStringsToBeAnagrams("Mary", "army");
     }
 
 }
