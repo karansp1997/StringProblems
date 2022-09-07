@@ -43,4 +43,25 @@ public class StringProblems {
         }
         System.out.println(new String(toBeSorted));
     }
+
+    public void replaceOccurrenceOfCharacterWithNumber(String givenString, char toFindOccurrence) {
+        char[] breakGivenString = givenString.toCharArray();
+
+        for(int i = 0; i<=breakGivenString.length-1; i++){
+            if(givenString.indexOf(toFindOccurrence) == -1){
+                System.out.println("Character to find occurrence of is not present in the given string: "+givenString);
+                System.exit(0);
+            }
+        }
+
+        int counter=0;
+
+        for(int i = 0; i<=breakGivenString.length-1; i++) {
+            if(breakGivenString[i] == toFindOccurrence){
+                counter++;
+                breakGivenString[i] = String.valueOf(counter).charAt(0);
+            }
+        }
+        System.out.println(breakGivenString);
+    }
 }
